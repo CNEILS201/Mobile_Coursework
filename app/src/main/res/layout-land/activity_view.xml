@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_height="match_parent"
+    android:layout_width="match_parent"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+<androidx.constraintlayout.widget.ConstraintLayout
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ViewActivity">
+
+    <TextView
+        android:id="@+id/txtHeadTitle"
+        android:layout_width="match_parent"
+        android:layout_height="78dp"
+        android:background="#0D4CEA"
+        android:gravity="center_horizontal"
+        android:text="\nTextView"
+        android:textAlignment="center"
+        android:textColor="#FFFFFF"
+        android:textSize="20sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/btnChangeLeft"
+        android:layout_width="365dp"
+        android:layout_height="68dp"
+        android:onClick="btnLeftClicked"
+        android:text="TestInc"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/txtHeadTitle" />
+
+    <Button
+        android:id="@+id/btnChangeRight"
+        android:layout_width="365dp"
+        android:layout_height="68dp"
+        android:onClick="btnRightClicked"
+        android:text="TestRoad"
+        app:layout_constraintStart_toEndOf="@+id/btnChangeLeft"
+        app:layout_constraintTop_toBottomOf="@+id/txtHeadTitle" />
+
+    <TextView
+        android:id="@+id/txtDateAndPos"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_horizontal"
+        android:text="You entered date:    \n1/5"
+        android:textAlignment="center"
+        android:textSize="20sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btnBack" />
+
+    <Button
+        android:id="@+id/btnBack"
+        android:layout_width="365dp"
+        android:layout_height="32dp"
+        android:onClick="btnBackClicked"
+        android:text="-1"
+        android:textSize="12sp"
+        app:layout_constraintEnd_toStartOf="@+id/btnForward"
+        app:layout_constraintTop_toBottomOf="@+id/whatAreButtons" />
+
+    <Button
+        android:id="@+id/btnForward"
+        android:layout_width="365dp"
+        android:layout_height="32dp"
+        android:onClick="btnForwardClicked"
+        android:text="+1"
+        android:textSize="12sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/whatAreButtons" />
+
+    <TextView
+        android:id="@+id/txtShowInfo"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Title:\nStart Date\nEnd Date\nDescription:\n\n\nLatitude and Longitude:\nPublicshed date:"
+        android:textSize="20sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/txtDateAndPos" />
+
+    <TextView
+        android:id="@+id/whatAreButtons"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Road works in this case are road works that are currently happening but will also effect this date"
+        android:textSize="16sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btnChangeLeft" />
+
+    <fragment
+        android:id="@+id/map"
+        android:name="com.google.android.gms.maps.SupportMapFragment"
+        android:layout_width="match_parent"
+        android:layout_height="190dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/txtShowInfo" />
+</androidx.constraintlayout.widget.ConstraintLayout>
+</ScrollView>
